@@ -10,7 +10,7 @@ def output(dict,path):
             writer.writerow([key, value])
 
 
-with open('tReadingData/8_33.txt', 'r') as myfile:
+with open('tReadingData/1-30.txt', 'r') as myfile:
     text1=myfile.read().replace('\n', '')
 
 text1 = string.lower(text1)
@@ -24,7 +24,7 @@ counts = {}
 for w in wordsStemmed1:
     counts[w] = counts.get(w,0) + 1
 
-output(counts,'8_33.csv')
+output(counts,'1-30 voc.csv')
 
 
 
