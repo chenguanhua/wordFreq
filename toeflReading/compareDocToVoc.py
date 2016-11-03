@@ -10,7 +10,7 @@ def output(dict,path):
             writer.writerow([key, value])
 
 
-with open('tReadingData/1_18.txt', 'r') as myfile:
+with open('tReadingData/6_34.txt', 'r') as myfile:
     text1=myfile.read().replace('\n', '')
 
 text1 = string.lower(text1)
@@ -24,7 +24,7 @@ counts = {}
 for w in wordsStemmed1:
     counts[w] = counts.get(w,0) + 1
 
-with open('tReadingData/test.csv', 'rb') as voc:
+with open('tReadingData/21-30 voc.csv', 'rb') as voc:
     text = csv.reader(voc)
     words2=[item[0] for item in text]
 
@@ -34,3 +34,17 @@ overlap={}
 
 for i in range(len(wordsStemmed2)):
     overlap[wordsStemmed2[i]]=counts.get(wordsStemmed2[i],"none");
+
+print overlap
+print len(counts.keys())
+print wordsStemmed1
+print len(words1)
+print len(wordsStemmed1)
+print len(wordsStemmed2)
+
+num=0
+for word in counts.keys():
+    if word in wordsStemmed2:
+        num=num+1
+
+print num*1.0/len(counts.keys())
